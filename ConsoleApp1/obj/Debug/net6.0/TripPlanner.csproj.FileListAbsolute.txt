@@ -1,0 +1,15 @@
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\TripPlanner.exe
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\TripPlanner.deps.json
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\TripPlanner.runtimeconfig.json
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\TripPlanner.dll
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\TripPlanner.pdb
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\TripPlanner.csproj.AssemblyReference.cache
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\TripPlanner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\TripPlanner.AssemblyInfoInputs.cache
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\TripPlanner.AssemblyInfo.cs
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\TripPlanner.csproj.CoreCompileInputs.cache
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\TripPlanner.dll
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\refint\TripPlanner.dll
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\TripPlanner.pdb
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\TripPlanner.genruntimeconfig.cache
+C:\Users\Mariyan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\ref\TripPlanner.dll

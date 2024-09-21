@@ -1,0 +1,110 @@
+﻿@page
+@model TripPlanner.Pages.FlightInfoModel
+@{
+    ViewData["Title"] = "Add Flight Info";
+}
+@using Newtonsoft.Json
+@using TripPlanner.Models
+
+
+<h2>Add Flight Info</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/site.css">
+    <title>@ViewData["Title"]</title>
+</head>
+<form method="post" asp-page="/FlightInfo">
+    <div class="form-group">
+        <label>Company</label>
+        <select asp-for="Flight.Company" class="form-control">
+            <option value="">Select Company</option>
+            @foreach (var company in Enum.GetValues(typeof(TripPlanner.Models.Companies)))
+            {
+                <option value="@company">@company</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>From</label>
+        <select asp-for="Flight.From" class="form-control">
+            <option value="">Select Departure</option>
+            @foreach (var destination in Enum.GetValues(typeof(TripPlanner.Models.Destinations)))
+            {
+                <option value="@destination">@destination</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>To</label>
+        <select asp-for="Flight.To" class="form-control">
+            <option value="">Select Arrival</option>
+            @foreach (var destination in Enum.GetValues(typeof(TripPlanner.Models.Destinations)))
+            {
+                <option value="@destination">@destination</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Date</label>
+        <input asp-for="Flight.Date" class="form-control" type="date" />
+    </div>
+
+    <div class="form-group">
+        <label>Price</label>
+        <input asp-for="Flight.Price" class="form-control" type="text" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Flight</button>
+</form>
+
+<hr />
+
+<h2>Submitted Flights</h2>
+
+@if (Model.Flights != null && Model.Flights.Any())
+{
+        <ul>
+        @for (int i = 0; i < Model.Flights.Count; i++)
+        {
+                    <li>
+                @Model.Flights[i].Company - @Model.Flights[i].From to @Model.Flights[i].To on @Model.Flights[i].Date.ToShortDateString() 
+                        for @Model.Flights[i].Price € 
+                        <form method="post" asp-page-handler="RemoveFlight" asp-route-index="@i" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">Remove</button>
+                        </form>
+                    </li>
+        }
+        </ul>
+}
+else
+{
+        <p>No flights submitted yet.</p>
+}
+
+<hr />
+
+<!-- Calculate possible routes button -->
+@if (Model.Flights?.Count > 1)
+{
+    <form method="post" asp-page-handler="CalculateRoutes">
+        <button type="submit" class="btn btn-success">Calculate Possible Routes</button>
+    </form>
+
+    <!-- Show possible routes and prices after calculation -->
+    @if (Model.PossibleRoutes != null && Model.PossibleRoutes.Any())
+    {
+        <h2>Calculated Routes Ordered by Price</h2>
+        <ul>
+            @foreach (var route in Model.PossibleRoutes)
+            {
+                <li>
+                     Route: @Html.Raw(string.Join(" -> ", route.Stops)) - <b style="color:#43c823">Total Price: @route.TotalPrice €</b>
+                </li>
+            }
+        </ul>
+    }
+}
